@@ -1,5 +1,4 @@
 public class Calculator {
-    static double result;
 
     public Calculator() {
     }
@@ -24,11 +23,12 @@ public class Calculator {
     }
 
     public static double calculate(double number1, double number2, char sign) {
+        double result;
         switch (sign) {
-            case '+' -> result = Calculator.plus(number1, number2);
-            case '-' -> result = Calculator.minus(number1, number2);
-            case '/' -> result = Calculator.divide(number1, number2);
-            case '*' -> result = Calculator.multiply(number1, number2);
+            case '+' -> result = plus(number1, number2);
+            case '-' -> result = minus(number1, number2);
+            case '/' -> result = divide(number1, number2);
+            case '*' -> result = multiply(number1, number2);
             default -> throw new IllegalArgumentException("Вы ввели неверный знак");
         }
         return result;
